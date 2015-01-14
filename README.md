@@ -1,2 +1,2 @@
 # placeholder.js
-Old browsers (IE9-) support placeholder attribute
+Old browsers (IE9-) support placeholder
