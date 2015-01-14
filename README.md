@@ -1,3 +1,3 @@
 # placeholder.js
-A jQuery plugin that enables HTML5 placeholder behavior for old browsers.
+A jQuery plugin that enables HTML5 placeholder behavior for old browsers. <br>
 一个jQuery插件，可以让旧的浏览器支持HTML5-placeholder属性.
