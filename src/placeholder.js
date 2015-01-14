@@ -15,29 +15,27 @@ $(function() {
 					}, 31);
 				});
 			})();
-			if ($that.data('placeholder-show') !== false && $that.is(':visible')) {
-				if ($that.val() == '') {
-					var width = $that.outerWidth();
-					var height = $that.outerHeight();
-					var fontSize = $that.css('font-size');
-					var fontFamily = $that.css('font-family');
-					var paddingLeft = parseInt($that.css('padding-left'), 10) + 3;
-					var word = $that.attr('placeholder') || 'Please enter...';
-					var offset = $that.offset();
-					$that.is('input') && $placeholder.css({性
-						lineHeight : height + 'px'
-					});
-					$placeholder.css({
-						position : 'absolute',
-						top : offset.top,
-						left : offset.left,
-						width : (width - paddingLeft) + 'px',
-						height : height + 'px',
-						fontSize : fontSize,
-						paddingLeft : paddingLeft + 'px',
-						fontFamily : fontFamily
-					}).text(word).show();
-				}
+			if ($that.data('placeholder-show') !== false && $that.is(':visible') && $that.val() == '') {
+				var width = $that.outerWidth();
+				var height = $that.outerHeight();
+				var fontSize = $that.css('font-size');
+				var fontFamily = $that.css('font-family');
+				var paddingLeft = parseInt($that.css('padding-left'), 10) + 3;
+				var word = $that.attr('placeholder') || 'Please enter...';
+				var offset = $that.offset();
+				$that.is('input') && $placeholder.css({性
+					lineHeight : height + 'px'
+				});
+				$placeholder.css({
+					position : 'absolute',
+					top : offset.top,
+					left : offset.left,
+					width : (width - paddingLeft) + 'px',
+					height : height + 'px',
+					fontSize : fontSize,
+					paddingLeft : paddingLeft + 'px',
+					fontFamily : fontFamily
+				}).text(word).show();
 			} else {
 				$placeholder.hide();
 			}
@@ -49,7 +47,7 @@ $(function() {
 				delete idCache[id];
 			}
 		}
-		timerId = setTimeout(loop, 200);
+		timerId = setTimeout(loop, 20);
 	};
 	$('[placeholder]').live('click', function() {
 		$(this).data('placeholder-show', false);
