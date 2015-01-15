@@ -1,6 +1,6 @@
 /**
  * 使旧浏览器(主要是IE6-IE9)支持input中的placeholder属性.
- * @author YaoYL
+ * @author YaoYiLang
  * @version 1.0
  */
 $(function() {
@@ -10,7 +10,7 @@ $(function() {
 	var idSeed = 0, idCache = {}, timerId = 0, selector = 'input[placeholder],textarea[placeholder]', animateSpan = function($that) {
 		var spanId = $that.data('placeholder-span-id'), $placeholder = (!!spanId) ? $('#' + spanId) : (function() {
 			$that.data('placeholder-span-id', (spanId = 'placeholder-span-' + (idSeed++)));
-			return $placeholder = $('<span id="' + spanId + '" style="color:#888888;"></span>').hide().appendTo(document.body).on('click', function() {
+			return $placeholder = $('<span id="' + spanId + '" style="position:absolute;color:#888888;overflow:hidden;"></span>').hide().appendTo(document.body).on('click', function() {
 				$placeholder.hide();
 				setTimeout(function() {
 					$that[0].focus();
@@ -30,7 +30,6 @@ $(function() {
 				lineHeight : height + 'px'
 			});
 			$placeholder.css({
-				position : 'absolute',
 				top : offset.top,
 				left : offset.left,
 				width : (width - paddingLeft) + 'px',
