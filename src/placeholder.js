@@ -10,7 +10,7 @@ $(function() {
 	var idSeed = 0, idCache = {}, timerId = 0, selector = 'input[placeholder],textarea[placeholder]', animateSpan = function($that) {
 		var spanId = $that.data('placeholder-span-id'), $placeholder = (!!spanId) ? $('#' + spanId) : (function() {
 			$that.data('placeholder-span-id', (spanId = 'placeholder-span-' + (idSeed++)));
-			return $placeholder = $('<span id="' + spanId + '" style="position:absolute;color:#888888;overflow:hidden;"></span>').hide().appendTo($that.parent()).on('click', function() {
+			return $placeholder = $('<span id="' + spanId + '" style="position:absolute;color:#888888;overflow:hidden;background:none;"></span>').hide().appendTo($that.parent()).on('click', function() {
 				$placeholder.hide();
 				setTimeout(function() {
 					$that[0].focus();
